@@ -331,10 +331,22 @@ section {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    pointer-events: none;
-    /* Let clicks pass through */
+    cursor: pointer;
+    pointer-events: auto;
+    /* Enable clicks */
     animation: bounce-hint 2s infinite;
     border: 2px solid var(--accent-color);
+    transition: transform 0.2s;
+}
+
+.interaction-hint:hover {
+    transform: scale(1.05);
+    /* Interactive feedback */
+}
+
+/* Fix bounce animation conflict on hover */
+.interaction-hint:hover {
+    animation: none;
 }
 
 .hand-icon {
@@ -455,19 +467,53 @@ section {
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
 
+/* Page Curl Effect */
+.page-cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 50px 50px;
+    border-color: transparent transparent #fff transparent;
+    /* The "back" of the page */
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.1);
+    animation: corner-breath 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 25;
+}
+
+@keyframes corner-breath {
+
+    0%,
+    100% {
+        border-width: 0 0 50px 50px;
+        transform: translate(0, 0);
+    }
+
+    50% {
+        border-width: 0 0 60px 60px;
+        transform: translate(-2px, -2px);
+    }
+}
+
 .cover-tag {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    top: 20px;
+    /* Moved to top */
+    right: -15px;
+    /* Slight overhang */
     background: #00E676;
-    /* Vivid Green */
     color: #fff;
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     border-radius: 50px;
-    transform: rotate(-5deg);
+    transform: rotate(15deg);
+    /* Adjusted rotation */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 3px solid #fff;
     z-index: 10;

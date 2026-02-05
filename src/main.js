@@ -17,6 +17,16 @@ document.querySelector('#app').innerHTML = `
     </div>
     <p class="read-the-docs">
       Click on the Vite logo to learn more
+        // Load pages
+        pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+
+        // Interaction Hint Logic
+        const hintEl = document.querySelector('.interaction-hint');
+        if (hintEl) {
+            hintEl.addEventListener('click', () => {
+                pageFlip.flipNext();
+            });
+        }
     </p>
   </div>
 `

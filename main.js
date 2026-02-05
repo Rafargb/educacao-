@@ -45,5 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Load pages
         pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+
+        // Interaction Hint Logic
+        const hintEl = document.querySelector('.interaction-hint');
+        if (hintEl) {
+            hintEl.addEventListener('click', () => {
+                pageFlip.flipNext();
+            });
+        }
     }
 });
