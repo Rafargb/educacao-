@@ -515,25 +515,27 @@ section {
 
 .cover-tag {
     position: absolute;
-    top: 20px;
-    /* Moved to Top */
-    left: -10px;
-    /* Hanging off the left edge slightly for "ribbon" effect */
+    top: 15px;
+    /* Top */
+    left: 50%;
+    /* Horizontal Center */
     right: auto;
     bottom: auto;
+    transform: translateX(-50%) rotate(-3deg);
+    /* Center + Slight Tilt */
     background: #00E676;
     color: #fff;
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 50px;
-    transform: rotate(-15deg);
-    /* Adjusted rotation */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 3px solid #fff;
     z-index: 10;
     animation: float 3s ease-in-out infinite;
+    white-space: nowrap;
+    /* Prevent line break */
 }
 
 @keyframes float {
