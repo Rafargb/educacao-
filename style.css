@@ -499,20 +499,36 @@ section {
     }
 }
 
+@keyframes corner-breath {
+
+    0%,
+    100% {
+        border-width: 0 0 50px 50px;
+        transform: translate(0, 0);
+    }
+
+    50% {
+        border-width: 0 0 60px 60px;
+        transform: translate(-2px, -2px);
+    }
+}
+
 .cover-tag {
     position: absolute;
     top: 20px;
-    /* Moved to top */
-    right: -15px;
-    /* Slight overhang */
+    /* Moved to Top */
+    left: -10px;
+    /* Hanging off the left edge slightly for "ribbon" effect */
+    right: auto;
+    bottom: auto;
     background: #00E676;
     color: #fff;
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0.5rem 1rem;
     border-radius: 50px;
-    transform: rotate(15deg);
+    transform: rotate(-15deg);
     /* Adjusted rotation */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 3px solid #fff;
