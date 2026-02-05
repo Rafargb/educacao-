@@ -313,7 +313,51 @@ section {
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
+    padding: 2rem 0;
     perspective: 1500px;
+    position: relative;
+    /* Needed for absolute positioning of hint */
+}
+
+.interaction-hint {
+    position: absolute;
+    bottom: 40px;
+    right: 20%;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    pointer-events: none;
+    /* Let clicks pass through */
+    animation: bounce-hint 2s infinite;
+    border: 2px solid var(--accent-color);
+}
+
+.hand-icon {
+    font-size: 1.5rem;
+}
+
+.hint-text {
+    font-weight: 700;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+@keyframes bounce-hint {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .page {
