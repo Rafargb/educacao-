@@ -387,9 +387,47 @@ section {
 
 /* ... existing styles ... */
 
+/* Worksheet Header "Cabeçalho" */
+/* Worksheet Box (The Frame) */
+.worksheet-box {
+    border: 2px solid #000;
+    padding: 0.5rem;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 0.5rem;
+}
+
+/* Worksheet Header (Integrated) */
+.worksheet-header {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #000;
+    /* Only bottom separator */
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.5rem;
+    text-align: left;
+    background: #fff;
+    color: #000;
+    line-height: 1.4;
+    box-sizing: border-box;
+}
+
+.header-row {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .page-image {
-    max-height: 85%;
-    /* Slightly larger */
+    max-height: 75%;
+    /* Reduced from 85% to fit header */
     width: 100%;
     object-fit: contain;
     flex-grow: 1;
@@ -409,6 +447,248 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+/* --- HTML Activity Styles --- */
+
+.activity-content {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.activity-title-box {
+    border: 2px solid #000;
+    border-radius: 15px;
+    /* Rounded corners */
+    padding: 0.5rem 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: auto;
+    min-width: 60%;
+    color: #000;
+}
+
+.activity-subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: #000;
+    margin-left: 10%;
+    /* Indent slightly */
+}
+
+/* Matching Game */
+.matching-section {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.match-col {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    /* More space between items */
+    align-items: center;
+    justify-content: center;
+}
+
+.match-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    /* Ensures white bg is transparent */
+}
+
+.match-item-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    height: 80px;
+    /* Match height of images for alignment */
+    display: flex;
+    align-items: center;
+    color: #000;
+}
+
+.match-line-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Handwriting Practice */
+.writing-section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tracing-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Fredoka', sans-serif;
+    /* Use rounded font for letters too */
+    font-size: 2.5rem;
+    color: #d0d0d0;
+    /* Light gray for tracing */
+    letter-spacing: 0.5rem;
+    position: relative;
+    line-height: 1;
+    padding-bottom: 5px;
+    font-weight: 600;
+    border-bottom: 1px dashed #999;
+}
+
+/* --- Puzzle Activity Styles (Lion Theme) --- */
+.puzzle-section {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.puzzle-piece {
+    width: 140px;
+    height: 140px;
+    border: 3px dashed #000;
+    /* Perforated look */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #fff;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.puzzle-piece::before {
+    /* Puzzle "Knob" simulation (optional, keeping simple for now) */
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-right: 3px dashed #000;
+    border-top: 3px dashed #000;
+    top: -12px;
+    transform: rotate(-45deg);
+    display: none;
+    /* Can enable for extra detail */
+}
+
+.puzzle-img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.puzzle-letter {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #fff;
+    -webkit-text-stroke: 2px #000;
+    /* Outline text for coloring */
+    line-height: 1;
+}
+
+.puzzle-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    color: #000; /* Force Black */
+}
+
+/* Matching Game */
+.matching-section {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.match-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.match-item {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5rem;
+    /* Emoji size / Text size */
+    font-weight: 600;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.match-line-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Handwriting Practice */
+.writing-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.tracing-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+    /* Monospace for alignment */
+    font-size: 1.8rem;
+    color: #ccc;
+    /* Light gray for tracing */
+    letter-spacing: 0.5rem;
+    position: relative;
+    border-bottom: 1px dashed #000;
+    line-height: 1.8rem;
+    padding-bottom: 2px;
+}
+
+.writing-line {
+    width: 100%;
+    height: 1.5rem;
+    border-bottom: 1px dashed #000;
 }
 
 .page-content {
